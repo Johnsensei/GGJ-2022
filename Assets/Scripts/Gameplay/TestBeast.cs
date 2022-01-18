@@ -17,6 +17,8 @@ public class TestBeast : MonoBehaviour
 
 	float previousDistanceToTouchPos, currentDistanceToTouchPos;
 
+	public Animator anim;
+
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
 	}
@@ -39,6 +41,10 @@ public class TestBeast : MonoBehaviour
                         isMoving = true;
                         touchPosition.z = 0;
 					    whereToMove = (touchPosition - transform.position).normalized;
+						//TODO - log the X and Y values and see what I can use for animation.
+						// Debug.Log(whereToMove);
+						// Debug.Log("X: " + whereToMove.x);
+						// Debug.Log("Y: " + whereToMove.y);
 					    rb.velocity = new Vector2 (whereToMove.x * moveSpeed, whereToMove.y * moveSpeed);
                     }
                     
@@ -55,8 +61,16 @@ public class TestBeast : MonoBehaviour
         if (isMoving){
             previousDistanceToTouchPos = (touchPosition - transform.position).magnitude;
         }
+
+		Animate();
     
         
 	} // End of Update
+
+	void Animate(){
+		anim.SetFloat("AnimMoveX", whereToMove.x);
+		anim.SetFloat("AnimMoveY", whereToMove.y);
+		anim.SetBool("isMoving", isMoving);
+	}
 
 }

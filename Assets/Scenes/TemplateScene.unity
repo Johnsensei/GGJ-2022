@@ -357,7 +357,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 595758529}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -8.11, z: -10}
+  m_LocalPosition: {x: 0, y: -7.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3052,7 +3052,6 @@ GameObject:
   - component: {fileID: 2041534099}
   - component: {fileID: 2041534105}
   - component: {fileID: 2041534103}
-  - component: {fileID: 2041534106}
   - component: {fileID: 2041534104}
   m_Layer: 0
   m_Name: TestRobot
@@ -3102,7 +3101,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 2066423639, guid: 7477a0efe3a6342cc8ee70e6fbd7c9c9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 606cba7234020449495355de76a61c28, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3162,7 +3161,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  anim: {fileID: 2041534106}
 --- !u!61 &2041534105
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3189,26 +3187,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!95 &2041534106
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2041534098}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9501c5ff4b49148d5b6766f7c00f392b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2048048691
 GameObject:
   m_ObjectHideFlags: 0
@@ -3221,7 +3199,6 @@ GameObject:
   - component: {fileID: 2048048695}
   - component: {fileID: 2048048698}
   - component: {fileID: 2048048693}
-  - component: {fileID: 2048048699}
   - component: {fileID: 2048048697}
   m_Layer: 0
   m_Name: TestBeast
@@ -3292,7 +3269,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 2066423639, guid: 7477a0efe3a6342cc8ee70e6fbd7c9c9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3695c41eafdee482d93ec67c93587c11, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3331,7 +3308,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  anim: {fileID: 2048048699}
 --- !u!61 &2048048698
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3358,23 +3334,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!95 &2048048699
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2048048691}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9501c5ff4b49148d5b6766f7c00f392b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0

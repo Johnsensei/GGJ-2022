@@ -17,6 +17,8 @@ public class TestRobot : MonoBehaviour
 
 	float previousDistanceToTouchPos, currentDistanceToTouchPos;
 
+	public Animator anim;
+
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
 	}
@@ -55,8 +57,16 @@ public class TestRobot : MonoBehaviour
         if (isMoving){
             previousDistanceToTouchPos = (touchPosition - transform.position).magnitude;
         }
+
+		Animate();
     
         
 	} // End of Update
+
+	void Animate(){
+		anim.SetFloat("AnimMoveX", whereToMove.x);
+		anim.SetFloat("AnimMoveY", whereToMove.y);
+		anim.SetBool("isMoving", isMoving);
+	}
 
 }
