@@ -1,8 +1,8 @@
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
-[RequireComponent(typeof(Image))]
-public class FadeImage : Fader<Image>
+[RequireComponent(typeof(TextMeshProUGUI))]
+public class FadeText : Fader<TextMeshProUGUI>
 {
     public override float GetComponentToFadeAlpha()
     {
