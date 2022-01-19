@@ -15,8 +15,6 @@ public class SceneController : MonoBehaviour
 
     public void CheckGoals(){
         if(robotGoal.onGoal && beastGoal.onGoal){
-            robot.levelCleared = true;
-            beast.levelCleared = true;
             StartCoroutine(FadeOut(robot.spriteRenderer));
             StartCoroutine(FadeOut(beast.spriteRenderer));
             // SceneLoader.LoadScene(nextSceneIndex);

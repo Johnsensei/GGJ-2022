@@ -19,7 +19,6 @@ public class Beast : MonoBehaviour
 	float previousDistanceToTouchPos, currentDistanceToTouchPos;
 
 	public Animator anim;
-	public bool levelCleared = false;
 
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();

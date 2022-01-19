@@ -11,7 +11,6 @@ public class Robot : MonoBehaviour
 
 	Rigidbody2D rb;
 	public SpriteRenderer spriteRenderer;
-	public Color myColor;
 
 	Touch touch;
 	Vector3 touchPosition, whereToMove;
@@ -20,12 +19,10 @@ public class Robot : MonoBehaviour
 	float previousDistanceToTouchPos, currentDistanceToTouchPos;
 
 	public Animator anim;
-	public bool levelCleared = false;
 
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
 		spriteRenderer = GetComponent<SpriteRenderer>();
-		myColor = GetComponent<SpriteRenderer>().color;
 	}
 	
 	void Update () {
@@ -64,31 +61,13 @@ public class Robot : MonoBehaviour
         }
 
 		Animate();
-
-		if(levelCleared){
-			// StartCoroutine(FadeTo(0f, 2f));
-		}
-    
-        
+           
 	} // End of Update
 
 	void Animate(){
 		anim.SetFloat("AnimMoveX", whereToMove.x);
 		anim.SetFloat("AnimMoveY", whereToMove.y);
 		anim.SetBool("isMoving", isMoving);
-	}
-
-	IEnumerator FadeTo(float aValue, float aTime)
-	{
-		// Debug.Log("This got called.");
-		
-		for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / aTime)
-		{
-			Color newColor = new Color(1, 1, 1, Mathf.Lerp(1, aValue, t));
-			myColor = newColor;
-			Debug.Log(newColor.a);
-			yield return null;
-		}
 	}
 
 }
