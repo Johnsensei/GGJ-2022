@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class TestBeast : MonoBehaviour
+public class Robot : MonoBehaviour
 {
 
    [SerializeField]
 	float moveSpeed = 5f;
 
 	Rigidbody2D rb;
+	public SpriteRenderer spriteRenderer;
+	public Color myColor;
 
 	Touch touch;
 	Vector3 touchPosition, whereToMove;
@@ -18,9 +20,12 @@ public class TestBeast : MonoBehaviour
 	float previousDistanceToTouchPos, currentDistanceToTouchPos;
 
 	public Animator anim;
+	public bool levelCleared = false;
 
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
+		spriteRenderer = GetComponent<SpriteRenderer>();
+		myColor = GetComponent<SpriteRenderer>().color;
 	}
 	
 	void Update () {
@@ -37,14 +42,10 @@ public class TestBeast : MonoBehaviour
 					currentDistanceToTouchPos = 0;
 					touchPosition = Camera.main.ScreenToWorldPoint (touch.position);
                     
-                    if(touchPosition.x > 0 && touchPosition.x < 5 && touchPosition.y < 10 && touchPosition.y > -10){
+                    if(touchPosition.x < 0 && touchPosition.x > -5 && touchPosition.y < 10 && touchPosition.y > -10){
                         isMoving = true;
                         touchPosition.z = 0;
 					    whereToMove = (touchPosition - transform.position).normalized;
-						//TODO - log the X and Y values and see what I can use for animation.
-						// Debug.Log(whereToMove);
-						// Debug.Log("X: " + whereToMove.x);
-						// Debug.Log("Y: " + whereToMove.y);
 					    rb.velocity = new Vector2 (whereToMove.x * moveSpeed, whereToMove.y * moveSpeed);
                     }
                     
@@ -63,6 +64,10 @@ public class TestBeast : MonoBehaviour
         }
 
 		Animate();
+
+		if(levelCleared){
+			// StartCoroutine(FadeTo(0f, 2f));
+		}
     
         
 	} // End of Update
@@ -71,6 +76,19 @@ public class TestBeast : MonoBehaviour
 		anim.SetFloat("AnimMoveX", whereToMove.x);
 		anim.SetFloat("AnimMoveY", whereToMove.y);
 		anim.SetBool("isMoving", isMoving);
+	}
+
+	IEnumerator FadeTo(float aValue, float aTime)
+	{
+		// Debug.Log("This got called.");
+		
+		for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / aTime)
+		{
+			Color newColor = new Color(1, 1, 1, Mathf.Lerp(1, aValue, t));
+			myColor = newColor;
+			Debug.Log(newColor.a);
+			yield return null;
+		}
 	}
 
 }
