@@ -6,11 +6,6 @@ public class AIChase : MonoBehaviour
     [SerializeField]
     private Transform ChaseTarget;
 
-    void Start()
-    {
-        BeginChasing(ChaseTarget);
-    }
-
     void Update()
     {
         if (ChaseTarget == null)
