@@ -11,6 +11,7 @@ public class Beast : MonoBehaviour
 
 	Rigidbody2D rb;
 	public SpriteRenderer spriteRenderer;
+	public ParticleSystem goalTeleportEffect;
 
 	Touch touch;
 	Vector3 touchPosition, whereToMove;

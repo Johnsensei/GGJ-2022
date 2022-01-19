@@ -17,7 +17,8 @@ public class SceneController : MonoBehaviour
         if(robotGoal.onGoal && beastGoal.onGoal){
             StartCoroutine(FadeOut(robot.spriteRenderer));
             StartCoroutine(FadeOut(beast.spriteRenderer));
-            // SceneLoader.LoadScene(nextSceneIndex);
+            StartCoroutine(TeleportEffect());
+            StartCoroutine(NextScene());
         }
     }
 
@@ -36,6 +37,17 @@ public class SceneController : MonoBehaviour
         }
 
         mySprite.color = tmpColor;
+    }
+
+    IEnumerator TeleportEffect(){
+        yield return new WaitForSeconds(0.5f);
+        robot.goalTeleportEffect.Play();
+        beast.goalTeleportEffect.Play();
+    }
+
+    IEnumerator NextScene(){
+        yield return new WaitForSeconds(4f);
+        SceneLoader.LoadScene(nextSceneIndex);
     }
 
 
