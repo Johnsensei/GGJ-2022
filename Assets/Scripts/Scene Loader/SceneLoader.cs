@@ -66,7 +66,10 @@ public class SceneLoader : MonoBehaviour
     {
         yield return new WaitForSeconds(FadeSpeed);
 
-        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+        foreach(var scene in SceneManager.GetAllScenes())
+        {
+            SceneManager.UnloadSceneAsync(scene.buildIndex);
+        }
         SceneManager.LoadSceneAsync(sceneIndex, LoadSceneMode.Additive).completed += (asyncOperation) => {
             Invoke("FadeOutDelayed", FadeDelayAfterLoad);
         };
