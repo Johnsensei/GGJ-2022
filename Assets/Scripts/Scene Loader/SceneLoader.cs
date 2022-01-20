@@ -44,7 +44,7 @@ public class SceneLoader : MonoBehaviour
     {
         if (Singleton == null)
         {
-            SceneManager.LoadSceneAsync("Loading Screen", LoadSceneMode.Additive).completed += (asyncOperation) => {
+            SceneManager.LoadSceneAsync("Loading Screen", LoadSceneMode.Single).completed += (asyncOperation) => {
                 Singleton = FindObjectOfType<SceneLoader>();
                 Singleton.FadeAndLoadScene(sceneIndex);
             };
@@ -66,11 +66,7 @@ public class SceneLoader : MonoBehaviour
     {
         yield return new WaitForSeconds(FadeSpeed);
 
-        foreach(var scene in SceneManager.GetAllScenes())
-        {
-            SceneManager.UnloadSceneAsync(scene.buildIndex);
-        }
-        SceneManager.LoadSceneAsync(sceneIndex, LoadSceneMode.Additive).completed += (asyncOperation) => {
+        SceneManager.LoadSceneAsync(sceneIndex, LoadSceneMode.Single).completed += (asyncOperation) => {
             Invoke("FadeOutDelayed", FadeDelayAfterLoad);
         };
     }
