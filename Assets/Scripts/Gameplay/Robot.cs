@@ -37,8 +37,6 @@ public class Robot : MonoBehaviour
 	void Update () {
 
         if (isMoving){
-
-
             currentDistanceToTouchPos = (touchPosition - transform.position).magnitude;
 			ReduceBattery();
         }
@@ -51,15 +49,16 @@ public class Robot : MonoBehaviour
 					currentDistanceToTouchPos = 0;
 					touchPosition = Camera.main.ScreenToWorldPoint (touch.position);
                     
-                    if(touchPosition.x < 0 && touchPosition.x > -5 && touchPosition.y < 10 && touchPosition.y > -10){
-                        isMoving = true;
-                        touchPosition.z = 0;
-					    whereToMove = (touchPosition - transform.position).normalized;
-					    rb.velocity = new Vector2 (whereToMove.x * moveSpeed, whereToMove.y * moveSpeed);
+                    if(touchPosition.x < 0 &&
+						touchPosition.x > -5 &&
+						touchPosition.y < 10 &&
+						touchPosition.y > -10){
+							isMoving = true;
+							touchPosition.z = 0;
+							whereToMove = (touchPosition - transform.position).normalized;
+							rb.velocity = new Vector2 (whereToMove.x * moveSpeed, whereToMove.y * moveSpeed);
                     }
-                    
-					
-				}
+			}
 		}
 
 		if (currentDistanceToTouchPos > previousDistanceToTouchPos) {
@@ -84,15 +83,15 @@ public class Robot : MonoBehaviour
 	}
 
 	void ReduceBattery(){
-
 		if (batteryAmount <= 0){
+			// isMoving = false;
 			batteryAmount = 0;
 			batteryBarImage.fillAmount = batteryAmount / maxBattery;
 		} else {
 			batteryAmount -= batteryDecreaseAmount * Time.deltaTime;
 			batteryBarImage.fillAmount = batteryAmount / maxBattery;
 		}
-		
 	}
+	
 
 }
