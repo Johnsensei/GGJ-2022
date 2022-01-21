@@ -36,6 +36,14 @@ public class Robot : MonoBehaviour
 	
 	void Update () {
 
+		if(batteryAmount <= 0){
+			isMoving = false;
+			rb.velocity = Vector2.zero;
+			spriteRenderer.color = new Color(0.3f, 0.3f, 0.3f, 1f);
+		} else {
+			spriteRenderer.color = Color.white;
+		}
+
         if (isMoving){
             currentDistanceToTouchPos = (touchPosition - transform.position).magnitude;
 			ReduceBattery();
@@ -52,7 +60,8 @@ public class Robot : MonoBehaviour
                     if(touchPosition.x < 0 &&
 						touchPosition.x > -5 &&
 						touchPosition.y < 10 &&
-						touchPosition.y > -10){
+						touchPosition.y > -10 &&
+						batteryAmount > 0){
 							isMoving = true;
 							touchPosition.z = 0;
 							whereToMove = (touchPosition - transform.position).normalized;
