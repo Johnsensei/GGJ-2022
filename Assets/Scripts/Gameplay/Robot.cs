@@ -22,9 +22,9 @@ public class Robot : MonoBehaviour
 
 	public Animator anim;
 	public Image batteryBarImage;
-	public float maxBattery = 100f;
-	public float batteryAmount = 100f;
-	public float batteryDecreaseAmount = 5f;
+	public float maxBattery;
+	public float batteryAmount;
+	public float batteryDecreaseAmount;
 
 
 	void Start () {
@@ -37,6 +37,8 @@ public class Robot : MonoBehaviour
 	void Update () {
 
         if (isMoving){
+
+
             currentDistanceToTouchPos = (touchPosition - transform.position).magnitude;
 			ReduceBattery();
         }
@@ -82,13 +84,15 @@ public class Robot : MonoBehaviour
 	}
 
 	void ReduceBattery(){
-		batteryAmount -= batteryDecreaseAmount * Time.deltaTime;
 
-		batteryBarImage.fillAmount = batteryAmount / maxBattery;
+		if (batteryAmount <= 0){
+			batteryAmount = 0;
+			batteryBarImage.fillAmount = batteryAmount / maxBattery;
+		} else {
+			batteryAmount -= batteryDecreaseAmount * Time.deltaTime;
+			batteryBarImage.fillAmount = batteryAmount / maxBattery;
+		}
+		
 	}
-
-	// public float GetBatteryNormalized(){
-	// 	return batteryAmount / MAX_BATTERY;
-	// }
 
 }

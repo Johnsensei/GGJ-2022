@@ -67,8 +67,14 @@ public class Beast : MonoBehaviour
         
         if (isMoving){
             previousDistanceToTouchPos = (touchPosition - transform.position).magnitude;
-			robot.batteryAmount += 1f * Time.deltaTime;
-			robot.batteryBarImage.fillAmount = robot.batteryAmount / robot.maxBattery;
+
+			if (robot.batteryAmount >= 100){
+				robot.batteryAmount = 100;
+				robot.batteryBarImage.fillAmount = robot.batteryAmount / robot.maxBattery;
+			} else {
+				robot.batteryAmount += 1f * Time.deltaTime;
+				robot.batteryBarImage.fillAmount = robot.batteryAmount / robot.maxBattery;
+				}
         }
 
 		Animate();
