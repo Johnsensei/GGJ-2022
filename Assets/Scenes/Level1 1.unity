@@ -1453,6 +1453,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1330879435}
     m_Modifications:
     - target: {fileID: 2210990997668520406, guid: ca675f9ba09274be69ce70103a551788, type: 3}
+      propertyPath: robot
+      value: 
+      objectReference: {fileID: 371528409}
+    - target: {fileID: 2210990997668520406, guid: ca675f9ba09274be69ce70103a551788, type: 3}
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 0}

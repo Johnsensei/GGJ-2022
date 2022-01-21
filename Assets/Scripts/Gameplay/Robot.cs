@@ -22,7 +22,7 @@ public class Robot : MonoBehaviour
 
 	public Animator anim;
 	public Image batteryBarImage;
-	public const float MAX_BATTERY = 100f;
+	public float maxBattery = 100f;
 	public float batteryAmount = 100f;
 	public float batteryDecreaseAmount = 5f;
 
@@ -84,7 +84,7 @@ public class Robot : MonoBehaviour
 	void ReduceBattery(){
 		batteryAmount -= batteryDecreaseAmount * Time.deltaTime;
 
-		batteryBarImage.fillAmount = batteryAmount / MAX_BATTERY;
+		batteryBarImage.fillAmount = batteryAmount / maxBattery;
 	}
 
 	// public float GetBatteryNormalized(){
