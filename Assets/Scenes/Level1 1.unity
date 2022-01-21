@@ -608,14 +608,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9068518207958849238, guid: 2f93bb11975b24100a8e7933d165fb6b, type: 3}
-      propertyPath: barImage
-      value: 
-      objectReference: {fileID: 1488942660}
-    - target: {fileID: 9068518207958849238, guid: 2f93bb11975b24100a8e7933d165fb6b, type: 3}
-      propertyPath: spriteRenderer
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 9068518207958849238, guid: 2f93bb11975b24100a8e7933d165fb6b, type: 3}
       propertyPath: batteryBarImage
       value: 
       objectReference: {fileID: 1488942660}
@@ -808,7 +800,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 25}
+  m_SizeDelta: {x: 300, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &546898934
 MonoBehaviour:
@@ -884,8 +876,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1169, y: 540}
-  m_SizeDelta: {x: 100, y: 25}
+  m_AnchoredPosition: {x: 300, y: 86}
+  m_SizeDelta: {x: 300, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &590160726
 GameObject:
@@ -2189,7 +2181,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 25}
+  m_SizeDelta: {x: 300, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1488942660
 MonoBehaviour:
@@ -5061,7 +5053,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2918319134730925065, guid: a87ae161606194a57baf1ce38a9135dd, type: 3}
       propertyPath: m_Mass
-      value: 1
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 2918319134730925065, guid: a87ae161606194a57baf1ce38a9135dd, type: 3}
       propertyPath: m_LinearDrag

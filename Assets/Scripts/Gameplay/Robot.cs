@@ -24,7 +24,7 @@ public class Robot : MonoBehaviour
 	public Image batteryBarImage;
 	public const float MAX_BATTERY = 100f;
 	public float batteryAmount = 100f;
-	public float batteryDecreaseAmount = 2f;
+	public float batteryDecreaseAmount = 5f;
 
 
 	void Start () {

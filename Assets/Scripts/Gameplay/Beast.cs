@@ -21,6 +21,8 @@ public class Beast : MonoBehaviour
 
 	public Animator anim;
 
+	public Robot robot;
+
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
 		spriteRenderer = GetComponent<SpriteRenderer>();
