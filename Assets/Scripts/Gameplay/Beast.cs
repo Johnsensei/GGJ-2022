@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class TestRobot : MonoBehaviour
+public class Beast : MonoBehaviour
 {
 
    [SerializeField]
 	float moveSpeed = 5f;
 
 	Rigidbody2D rb;
+	public SpriteRenderer spriteRenderer;
+	public ParticleSystem goalTeleportEffect;
 
 	Touch touch;
 	Vector3 touchPosition, whereToMove;
@@ -21,6 +23,7 @@ public class TestRobot : MonoBehaviour
 
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
+		spriteRenderer = GetComponent<SpriteRenderer>();
 	}
 	
 	void Update () {
@@ -37,10 +40,14 @@ public class TestRobot : MonoBehaviour
 					currentDistanceToTouchPos = 0;
 					touchPosition = Camera.main.ScreenToWorldPoint (touch.position);
                     
-                    if(touchPosition.x < 0 && touchPosition.x > -5 && touchPosition.y < 10 && touchPosition.y > -10){
+                    if(touchPosition.x > 0 && touchPosition.x < 5 && touchPosition.y < 10 && touchPosition.y > -10){
                         isMoving = true;
                         touchPosition.z = 0;
 					    whereToMove = (touchPosition - transform.position).normalized;
+						//TODO - log the X and Y values and see what I can use for animation.
+						// Debug.Log(whereToMove);
+						// Debug.Log("X: " + whereToMove.x);
+						// Debug.Log("Y: " + whereToMove.y);
 					    rb.velocity = new Vector2 (whereToMove.x * moveSpeed, whereToMove.y * moveSpeed);
                     }
                     
