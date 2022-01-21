@@ -31,6 +31,8 @@ public class Fader<T> : MonoBehaviour, IFader where T : Component
             UpdateComponentToFadeAlpha(GetComponentToFadeAlpha() + newAlpha);
             yield return new WaitForEndOfFrame();
         }
+
+        UpdateComponentToFadeAlpha(desiredAlpha);
     }
 
     public virtual T GetComponentToFade()
