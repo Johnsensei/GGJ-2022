@@ -77,3 +77,7 @@ crashlytics-build.properties
 # Project Specific Files
 /[Aa]ssets/Tests/*
 /[Aa]ssets/Tests.meta
+
+# AstarPathfindingProject
+/[Aa]ssets/AstarPathfindingProject/
+/[Aa]ssets/AstarPathfindingProject.meta
