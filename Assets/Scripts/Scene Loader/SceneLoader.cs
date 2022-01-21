@@ -57,7 +57,8 @@ public class SceneLoader : MonoBehaviour
 
     void FadeAndLoadScene(int sceneIndex)
     {
-        SceneLoaderCanvas.gameObject.SetActive(true);
+        SceneLoaderCanvas.SetActive(true);
+        SceneLoaderCanvas.GetComponent<Canvas>().enabled = true;
         Fade(true);
         StartCoroutine(FadeAndLoadSceneCoroutine(sceneIndex));
     }
@@ -74,6 +75,12 @@ public class SceneLoader : MonoBehaviour
     void FadeOutDelayed()
     {
         Fade(false);
+        Invoke("DisableCanvasDelayed", FadeSpeed);
+    }
+
+    void DisableCanvasDelayed()
+    {
+        SceneLoaderCanvas.GetComponent<Canvas>().enabled = false;
     }
 
     void Fade(bool fadeIn)
