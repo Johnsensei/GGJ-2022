@@ -72,7 +72,7 @@ PrefabInstance:
     - target: {fileID: 126621513676306469, guid: baca6dedd8e1a46f888744967103fa89, type: 3}
       propertyPath: spriteRenderer
       value: 
-      objectReference: {fileID: 9068518207958849245}
+      objectReference: {fileID: 0}
     - target: {fileID: 126621513676306469, guid: baca6dedd8e1a46f888744967103fa89, type: 3}
       propertyPath: goalTeleportEffect
       value: 
@@ -193,8 +193,3 @@ PolygonCollider2D:
       - {x: 0.21, y: -0.39}
       - {x: 0.26, y: -0.31}
       - {x: 0.22999999, y: -0.11}
---- !u!212 &9068518207958849245 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 126621513676306478, guid: baca6dedd8e1a46f888744967103fa89, type: 3}
-  m_PrefabInstance: {fileID: 8941898004484697843}
-  m_PrefabAsset: {fileID: 0}

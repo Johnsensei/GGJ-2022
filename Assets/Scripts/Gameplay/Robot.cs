@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Robot : MonoBehaviour
 {
@@ -20,16 +21,24 @@ public class Robot : MonoBehaviour
 	float previousDistanceToTouchPos, currentDistanceToTouchPos;
 
 	public Animator anim;
+	public Image batteryBarImage;
+	public const float MAX_BATTERY = 100f;
+	public float batteryAmount = 100f;
+	public float batteryDecreaseAmount = 2f;
+
 
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
 		spriteRenderer = GetComponent<SpriteRenderer>();
+		// Test code that I have the battery bar image.
+		// batteryBarImage.fillAmount = 0.3f;
 	}
 	
 	void Update () {
 
         if (isMoving){
             currentDistanceToTouchPos = (touchPosition - transform.position).magnitude;
+			ReduceBattery();
         }
     
 		if (Input.touchCount > 0) {
@@ -59,6 +68,7 @@ public class Robot : MonoBehaviour
         
         if (isMoving){
             previousDistanceToTouchPos = (touchPosition - transform.position).magnitude;
+			ReduceBattery();
         }
 
 		Animate();
@@ -70,5 +80,15 @@ public class Robot : MonoBehaviour
 		anim.SetFloat("AnimMoveY", whereToMove.y);
 		anim.SetBool("isMoving", isMoving);
 	}
+
+	void ReduceBattery(){
+		batteryAmount -= batteryDecreaseAmount * Time.deltaTime;
+
+		batteryBarImage.fillAmount = batteryAmount / MAX_BATTERY;
+	}
+
+	// public float GetBatteryNormalized(){
+	// 	return batteryAmount / MAX_BATTERY;
+	// }
 
 }
