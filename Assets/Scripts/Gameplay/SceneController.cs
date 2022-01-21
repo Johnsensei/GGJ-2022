@@ -17,6 +17,8 @@ public class SceneController : MonoBehaviour
         if(robotGoal.onGoal && beastGoal.onGoal){
             StartCoroutine(FadeOut(robot.spriteRenderer));
             StartCoroutine(FadeOut(beast.spriteRenderer));
+            // robot.GetComponent<IFader>().Fade(false);
+            // beast.GetComponent<IFader>().Fade(false);
             StartCoroutine(TeleportEffect());
             StartCoroutine(NextScene());
         }
