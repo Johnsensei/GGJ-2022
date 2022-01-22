@@ -48,10 +48,6 @@ public class Beast : MonoBehaviour
                         isMoving = true;
                         touchPosition.z = 0;
 					    whereToMove = (touchPosition - transform.position).normalized;
-						//TODO - log the X and Y values and see what I can use for animation.
-						// Debug.Log(whereToMove);
-						// Debug.Log("X: " + whereToMove.x);
-						// Debug.Log("Y: " + whereToMove.y);
 					    rb.velocity = new Vector2 (whereToMove.x * moveSpeed, whereToMove.y * moveSpeed);
                     }
                     

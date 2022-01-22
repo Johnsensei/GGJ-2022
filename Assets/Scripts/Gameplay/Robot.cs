@@ -101,6 +101,5 @@ public class Robot : MonoBehaviour
 			batteryBarImage.fillAmount = batteryAmount / maxBattery;
 		}
 	}
-	
 
 }
