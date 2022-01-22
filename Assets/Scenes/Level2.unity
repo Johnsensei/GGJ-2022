@@ -3697,7 +3697,7 @@ MonoBehaviour:
   robotGoal: {fileID: 56081510}
   beast: {fileID: 884398065}
   beastGoal: {fileID: 1132625422}
-  nextSceneIndex: 1
+  nextSceneIndex: 0
 --- !u!4 &1959253244
 Transform:
   m_ObjectHideFlags: 0
