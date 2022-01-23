@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class TestRobot : MonoBehaviour
+public class Beast : MonoBehaviour
 {
 
    [SerializeField]
 	float moveSpeed = 5f;
 
 	Rigidbody2D rb;
+	public SpriteRenderer spriteRenderer;
+	public ParticleSystem goalTeleportEffect;
 
 	Touch touch;
 	Vector3 touchPosition, whereToMove;
@@ -19,14 +21,19 @@ public class TestRobot : MonoBehaviour
 
 	public Animator anim;
 
+	public Robot robot;
+
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
+		spriteRenderer = GetComponent<SpriteRenderer>();
 	}
 	
 	void Update () {
 
         if (isMoving){
             currentDistanceToTouchPos = (touchPosition - transform.position).magnitude;
+			robot.batteryAmount += 1f * Time.deltaTime;
+			robot.batteryBarImage.fillAmount = robot.batteryAmount / robot.maxBattery;
         }
     
 		if (Input.touchCount > 0) {
@@ -37,7 +44,7 @@ public class TestRobot : MonoBehaviour
 					currentDistanceToTouchPos = 0;
 					touchPosition = Camera.main.ScreenToWorldPoint (touch.position);
                     
-                    if(touchPosition.x < 0 && touchPosition.x > -5 && touchPosition.y < 10 && touchPosition.y > -10){
+                    if(touchPosition.x > 0 && touchPosition.x < 5 && touchPosition.y < 10 && touchPosition.y > -10){
                         isMoving = true;
                         touchPosition.z = 0;
 					    whereToMove = (touchPosition - transform.position).normalized;
@@ -56,6 +63,14 @@ public class TestRobot : MonoBehaviour
         
         if (isMoving){
             previousDistanceToTouchPos = (touchPosition - transform.position).magnitude;
+
+			if (robot.batteryAmount >= 100){
+				robot.batteryAmount = 100;
+				robot.batteryBarImage.fillAmount = robot.batteryAmount / robot.maxBattery;
+			} else {
+				robot.batteryAmount += 1f * Time.deltaTime;
+				robot.batteryBarImage.fillAmount = robot.batteryAmount / robot.maxBattery;
+				}
         }
 
 		Animate();
