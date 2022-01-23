@@ -94,4 +94,12 @@ public class Beast : MonoBehaviour
 		anim.SetBool("isMoving", isMoving);
 	}
 
+	void OnCollisionEnter2D(Collision2D other) {
+		Debug.Log("Collided with enemy.");
+		if(other.gameObject.tag == "Enemy"){
+			healthAmount -= healthDecreaseAmount;
+			healthBarImage.fillAmount = healthAmount / maxHealth;
+		}
+	}
+
 }
