@@ -21,6 +21,8 @@ public class Robot : MonoBehaviour
 	float previousDistanceToTouchPos, currentDistanceToTouchPos;
 
 	public Animator anim;
+
+	public Beast beast;
 	public Image batteryBarImage;
 	public float maxBattery;
 	public float batteryAmount;

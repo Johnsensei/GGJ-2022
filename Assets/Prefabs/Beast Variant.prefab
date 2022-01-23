@@ -68,6 +68,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6638320877125199579, guid: 72265390dc0744370834086c69de258a, type: 3}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6638320877125199579, guid: 72265390dc0744370834086c69de258a, type: 3}
+      propertyPath: healthAmount
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6638320877125199579, guid: 72265390dc0744370834086c69de258a, type: 3}
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 0}
@@ -75,6 +83,10 @@ PrefabInstance:
       propertyPath: goalTeleportEffect
       value: 
       objectReference: {fileID: 4609900233912187161}
+    - target: {fileID: 6638320877125199579, guid: 72265390dc0744370834086c69de258a, type: 3}
+      propertyPath: healthDecreaseAmount
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6638320877125199576, guid: 72265390dc0744370834086c69de258a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 72265390dc0744370834086c69de258a, type: 3}

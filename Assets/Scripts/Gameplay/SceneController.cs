@@ -15,6 +15,7 @@ public class SceneController : MonoBehaviour
 
     public void CheckGoals(){
         if(robotGoal.onGoal && beastGoal.onGoal){
+            // Debug.Log("Robot: " + robotGoal.onGoal + " Beast: " + beastGoal.onGoal);
             StartCoroutine(FadeOut(robot.spriteRenderer));
             StartCoroutine(FadeOut(beast.spriteRenderer));
             // robot.GetComponent<IFader>().Fade(false);
