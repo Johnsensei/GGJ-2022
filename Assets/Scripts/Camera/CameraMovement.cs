@@ -23,6 +23,9 @@ public class CameraMovement : MonoBehaviour
         }
         else
             Singleton = this;
+
+        float orthoSize = 11f * Screen.height / Screen.width * 0.5f;
+        Camera.main.orthographicSize = orthoSize;
     }
 
     public void Follow(Transform target)
