@@ -687,7 +687,6 @@ GameObject:
   - component: {fileID: 587065349}
   - component: {fileID: 587065353}
   - component: {fileID: 587065352}
-  - component: {fileID: 587065351}
   - component: {fileID: 587065350}
   m_Layer: 4
   m_Name: Enemy
@@ -729,27 +728,6 @@ MonoBehaviour:
   - {fileID: 1864702739}
   - {fileID: 248570660}
   IsPatrolling: 1
---- !u!50 &587065351
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 587065348}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!61 &587065352
 BoxCollider2D:
   m_ObjectHideFlags: 0
