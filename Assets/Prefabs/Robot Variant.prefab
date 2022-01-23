@@ -70,6 +70,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 126621513676306469, guid: baca6dedd8e1a46f888744967103fa89, type: 3}
+      propertyPath: maxBattery
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 126621513676306469, guid: baca6dedd8e1a46f888744967103fa89, type: 3}
+      propertyPath: batteryAmount
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 126621513676306469, guid: baca6dedd8e1a46f888744967103fa89, type: 3}
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 0}
@@ -77,6 +85,10 @@ PrefabInstance:
       propertyPath: goalTeleportEffect
       value: 
       objectReference: {fileID: 3878138822086364793}
+    - target: {fileID: 126621513676306469, guid: baca6dedd8e1a46f888744967103fa89, type: 3}
+      propertyPath: batteryDecreaseAmount
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 126621513676306473, guid: baca6dedd8e1a46f888744967103fa89, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -175,10 +187,10 @@ PolygonCollider2D:
       - {x: 0.29, y: 0.16}
       - {x: 0.28, y: 0.21}
       - {x: 0.07, y: 0.32999998}
-      - {x: 0.06, y: 0.42999998}
-      - {x: 0.04, y: 0.45999998}
-      - {x: -0.01, y: 0.45999998}
-      - {x: -0.08, y: 0.42999998}
+      - {x: 0.07506877, y: 0.31321684}
+      - {x: 0.047534265, y: 0.3168468}
+      - {x: -0.01, y: 0.2904758}
+      - {x: -0.08, y: 0.28684583}
       - {x: -0.19, y: 0.26999998}
       - {x: -0.29, y: 0.13}
       - {x: -0.29, y: -0.04}

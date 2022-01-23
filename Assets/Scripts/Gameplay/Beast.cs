@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Beast : MonoBehaviour
 {
@@ -23,6 +24,11 @@ public class Beast : MonoBehaviour
 
 	public Robot robot;
 
+	public Image healthBarImage;
+	public float maxHealth;
+	public float healthAmount;
+	public float healthDecreaseAmount;
+
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
 		spriteRenderer = GetComponent<SpriteRenderer>();
@@ -30,6 +36,10 @@ public class Beast : MonoBehaviour
 	
 	void Update () {
 
+		// healthBarImage.fillAmount = healthAmount / maxHealth;
+
+		// Leave this isMoving block like this.
+		// If it matches the bottom isMoving block then Beast won't stop moving.
         if (isMoving){
             currentDistanceToTouchPos = (touchPosition - transform.position).magnitude;
 			robot.batteryAmount += 1f * Time.deltaTime;
@@ -84,6 +94,16 @@ public class Beast : MonoBehaviour
 		anim.SetFloat("AnimMoveX", whereToMove.x);
 		anim.SetFloat("AnimMoveY", whereToMove.y);
 		anim.SetBool("isMoving", isMoving);
+	}
+
+	void OnCollisionEnter2D(Collision2D other) {
+		// Debug.Log("Collided with enemy.");
+		if(other.gameObject.tag == "Enemy"){
+			healthAmount -= healthDecreaseAmount;
+			healthBarImage.fillAmount = healthAmount / maxHealth;
+		} else if (other.gameObject.tag == "Targeted"){
+			Destroy(other.gameObject);
+		}
 	}
 
 }

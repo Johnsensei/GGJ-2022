@@ -9,7 +9,7 @@ public class Goal : MonoBehaviour
     public SceneController sceneController;
 
     public void OnTriggerEnter2D(Collider2D other) {
-        // Debug.Log(other.transform.position);
+        // Debug.Log(other.transform.name);
         onGoal = true;
         sceneController.CheckGoals();
     }
