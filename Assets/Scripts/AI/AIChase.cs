@@ -1,18 +1,17 @@
 using UnityEngine;
+using Pathfinding;
 
 public class AIChase : MonoBehaviour
 {
     public float ChaseSpeed = 2;
     [SerializeField]
-    private Transform ChaseTarget;
+    private Transform chaseTarget;
 
-    void Update()
+    private AIDestinationSetter destinationSetter;
+
+    private void Awake()
     {
-        if (ChaseTarget == null)
-            return;
-
-        var chaseDirection = (ChaseTarget.position - transform.position).normalized;
-        transform.position += chaseDirection * ChaseSpeed * Time.deltaTime;
+        destinationSetter = GetComponent<AIDestinationSetter>();   
     }
 
     public void BeginChasing(Transform chaseTarget)
@@ -20,12 +19,13 @@ public class AIChase : MonoBehaviour
         if (chaseTarget == null)
             return;
 
-        ChaseTarget = chaseTarget;
+        this.chaseTarget = chaseTarget;
+        destinationSetter.target = chaseTarget;
     }
 
     public void StopChasing()
     {
-        ChaseTarget = null;
+        chaseTarget = null;
     }    
 
 }

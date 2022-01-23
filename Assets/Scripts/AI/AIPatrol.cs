@@ -1,4 +1,5 @@
 using UnityEngine;
+using Pathfinding;
 
 public class AIPatrol : MonoBehaviour
 {
@@ -7,10 +8,16 @@ public class AIPatrol : MonoBehaviour
 
     [SerializeField]
     private bool IsPatrolling;
+    private AIDestinationSetter destinationSetter;
 
     bool isPatrollingForwards;
     int currentPatrolPoint;
     Vector3 currentDestination;
+
+    private void Awake()
+    {
+        destinationSetter = GetComponent<AIDestinationSetter>();
+    }
 
     void Start()
     {
@@ -28,7 +35,7 @@ public class AIPatrol : MonoBehaviour
         if (!IsPatrolling) 
             return;
 
-        if ((currentDestination - transform.position).sqrMagnitude <= .01f)
+        if ((currentDestination - transform.position).sqrMagnitude <= .05f)
             GoToNextDestination();
         else
             MoveTowardsDestination();
@@ -76,8 +83,7 @@ public class AIPatrol : MonoBehaviour
 
     void MoveTowardsDestination()
     {
-        var movingDirection = (currentDestination - transform.position).normalized;
-        transform.position += movingDirection * PatrolSpeed * Time.deltaTime;
+        destinationSetter.target = PatrolPoints[currentPatrolPoint];
     }
 
 }
