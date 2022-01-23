@@ -99,6 +99,8 @@ public class Beast : MonoBehaviour
 		if(other.gameObject.tag == "Enemy"){
 			healthAmount -= healthDecreaseAmount;
 			healthBarImage.fillAmount = healthAmount / maxHealth;
+		} else if (other.gameObject.tag == "Targeted"){
+			Destroy(other.gameObject);
 		}
 	}
 
