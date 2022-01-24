@@ -7,7 +7,13 @@ public class MovableBlock : MonoBehaviour
 
     Vector3? targetPosition;
     Coroutine movementCoroutine;
-       
+    Collider2D collider;
+
+    private void Awake()
+    {
+        collider = GetComponent<Collider2D>();
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (!collision.gameObject.CompareTag("Player"))
@@ -68,10 +74,29 @@ public class MovableBlock : MonoBehaviour
         return translation;
     }
 
+    Vector3 GetRaycastOffset(MoveDirection direction)
+    {
+        switch (direction)
+        {
+            case MoveDirection.Up:
+                return new Vector3(0, collider.bounds.extents.y, 0);
+            case MoveDirection.Down:
+                return new Vector3(0, -collider.bounds.extents.y, 0);
+            case MoveDirection.Left:
+                return new Vector3(-collider.bounds.extents.x, 0, 0);
+            case MoveDirection.Right:
+                return new Vector3(collider.bounds.extents.x, 0, 0);
+        }
+
+        return Vector3.zero;
+    }
+
+
     bool CanMove(MoveDirection direction)
     {
         var translationDirection = GetTranslationDirection(direction);
-        var translationDirectionRaycast = Physics2D.Raycast(transform.position + translationDirection / 2 + translationDirection.normalized / 100, translationDirection, .85f);
+        var raycastOffset = GetRaycastOffset(direction) + translationDirection.normalized / 100;
+        var translationDirectionRaycast = Physics2D.Raycast(transform.position + raycastOffset, translationDirection, .85f);
         if (translationDirectionRaycast)
         {
             return false;
