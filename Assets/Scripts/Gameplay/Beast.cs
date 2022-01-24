@@ -29,12 +29,18 @@ public class Beast : MonoBehaviour
 	public float healthAmount;
 	public float healthDecreaseAmount;
 
+	private bool recovery = false;
+
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
 		spriteRenderer = GetComponent<SpriteRenderer>();
 	}
 	
 	void Update () {
+
+		if (recovery){
+			return;
+		}
 
 		// healthBarImage.fillAmount = healthAmount / maxHealth;
 
@@ -62,8 +68,6 @@ public class Beast : MonoBehaviour
 						if (CameraMovement.Singleton != null)
 							CameraMovement.Singleton.Follow(transform);
                     }
-                    
-					
 				}
 		}
 
@@ -101,9 +105,26 @@ public class Beast : MonoBehaviour
 		if(other.gameObject.tag == "Enemy"){
 			healthAmount -= healthDecreaseAmount;
 			healthBarImage.fillAmount = healthAmount / maxHealth;
+			rb.AddForce((transform.position - other.transform.position) * 1000);
+			recovery = true;
+			Invoke("Recover", 2f);
 		} else if (other.gameObject.tag == "Targeted"){
 			Destroy(other.gameObject);
 		}
+	}
+
+	void OnTriggerEnter2D(Collider2D other) {
+		if(other.gameObject.tag == "Enemy"){
+			healthAmount -= healthDecreaseAmount;
+			healthBarImage.fillAmount = healthAmount / maxHealth;
+		} else if (other.gameObject.tag == "Targeted"){
+			Destroy(other.gameObject);
+		}
+	}
+
+	void Recover(){
+		recovery = false;
+		rb.velocity = Vector2.zero;
 	}
 
 }
