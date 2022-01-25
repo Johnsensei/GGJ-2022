@@ -1182,8 +1182,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 351486930}
     - target: {fileID: 2210990997668520406, guid: ca675f9ba09274be69ce70103a551788, type: 3}
+      propertyPath: forceAmout
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210990997668520406, guid: ca675f9ba09274be69ce70103a551788, type: 3}
+      propertyPath: forceAmount
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210990997668520406, guid: ca675f9ba09274be69ce70103a551788, type: 3}
       propertyPath: healthAmount
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210990997668520406, guid: ca675f9ba09274be69ce70103a551788, type: 3}
+      propertyPath: recoveryTime
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2210990997668520406, guid: ca675f9ba09274be69ce70103a551788, type: 3}
       propertyPath: healthBarImage

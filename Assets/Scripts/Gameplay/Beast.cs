@@ -29,6 +29,8 @@ public class Beast : MonoBehaviour
 	public float healthAmount;
 	public float healthDecreaseAmount;
 
+	public float forceAmount;
+	public float recoveryTime;
 	private bool recovery = false;
 
 	void Start () {
@@ -105,9 +107,10 @@ public class Beast : MonoBehaviour
 		if(other.gameObject.tag == "Enemy"){
 			healthAmount -= healthDecreaseAmount;
 			healthBarImage.fillAmount = healthAmount / maxHealth;
-			rb.AddForce((transform.position - other.transform.position) * 1000);
+			// TODO: How to increase the speed of the knockback without increasing the distance?
+			rb.AddForce((transform.position - other.transform.position) * forceAmount);
 			recovery = true;
-			Invoke("Recover", 2f);
+			Invoke("Recover", recoveryTime);
 		} else if (other.gameObject.tag == "Targeted"){
 			Destroy(other.gameObject);
 		}
