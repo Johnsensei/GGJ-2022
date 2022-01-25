@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Beast : MonoBehaviour
 {
 
    [SerializeField]
-	float moveSpeed = 5f;
+	float moveSpeed;
 
 	Rigidbody2D rb;
 	public SpriteRenderer spriteRenderer;
