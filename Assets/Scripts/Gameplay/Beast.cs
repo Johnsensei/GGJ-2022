@@ -67,8 +67,8 @@ public class Beast : MonoBehaviour
                         touchPosition.z = 0;
 					    whereToMove = (touchPosition - transform.position).normalized;
 					    rb.velocity = new Vector2 (whereToMove.x * moveSpeed, whereToMove.y * moveSpeed);
-						if (CameraMovement.Singleton != null)
-							CameraMovement.Singleton.Follow(transform);
+
+						Camera.main.UpdateTarget(transform);
                     }
 				}
 		}

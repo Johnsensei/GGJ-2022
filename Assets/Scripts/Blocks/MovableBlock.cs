@@ -7,11 +7,11 @@ public class MovableBlock : MonoBehaviour
 
     Vector3? targetPosition;
     Coroutine movementCoroutine;
-    Collider2D collider;
+    Collider2D blockCollider;
 
     private void Awake()
     {
-        collider = GetComponent<Collider2D>();
+        blockCollider = GetComponent<Collider2D>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -79,13 +79,13 @@ public class MovableBlock : MonoBehaviour
         switch (direction)
         {
             case MoveDirection.Up:
-                return new Vector3(0, collider.bounds.extents.y, 0);
+                return new Vector3(0, blockCollider.bounds.extents.y, 0);
             case MoveDirection.Down:
-                return new Vector3(0, -collider.bounds.extents.y, 0);
+                return new Vector3(0, -blockCollider.bounds.extents.y, 0);
             case MoveDirection.Left:
-                return new Vector3(-collider.bounds.extents.x, 0, 0);
+                return new Vector3(-blockCollider.bounds.extents.x, 0, 0);
             case MoveDirection.Right:
-                return new Vector3(collider.bounds.extents.x, 0, 0);
+                return new Vector3(blockCollider.bounds.extents.x, 0, 0);
         }
 
         return Vector3.zero;
