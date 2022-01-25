@@ -105,6 +105,7 @@ public class Beast : MonoBehaviour
 	void OnCollisionEnter2D(Collision2D other) {
 		// Debug.Log("Collided with enemy.");
 		if(other.gameObject.tag == "Enemy"){
+			spriteRenderer.color = Color.red;
 			healthAmount -= healthDecreaseAmount;
 			healthBarImage.fillAmount = healthAmount / maxHealth;
 			// TODO: How to increase the speed of the knockback without increasing the distance?
@@ -128,6 +129,7 @@ public class Beast : MonoBehaviour
 	void Recover(){
 		recovery = false;
 		rb.velocity = Vector2.zero;
+		spriteRenderer.color = Color.white;
 	}
 
 }
