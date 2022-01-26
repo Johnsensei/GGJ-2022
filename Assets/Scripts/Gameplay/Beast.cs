@@ -45,8 +45,6 @@ public class Beast : MonoBehaviour
 			return;
 		}
 
-		// healthBarImage.fillAmount = healthAmount / maxHealth;
-
 		// Leave this isMoving block like this.
 		// If it matches the bottom isMoving block then Beast won't stop moving.
         if (isMoving){
@@ -109,10 +107,15 @@ public class Beast : MonoBehaviour
 			spriteRenderer.color = Color.red;
 			healthAmount -= healthDecreaseAmount;
 			healthBarImage.fillAmount = healthAmount / maxHealth;
-			// TODO: How to increase the speed of the knockback without increasing the distance?
 			rb.AddForce((transform.position - other.transform.position) * forceAmount);
 			recovery = true;
 			Invoke("Recover", recoveryTime);
+
+			if(healthAmount <= 0){
+				Debug.Log("Health is 0. Scene should reset.");
+				// TODO: Implement Beast death logic.
+			}
+
 		} else if (other.gameObject.tag == "Targeted"){
 			Destroy(other.gameObject);
 		}
