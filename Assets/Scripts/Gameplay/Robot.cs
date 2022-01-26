@@ -8,7 +8,7 @@ public class Robot : MonoBehaviour
 {
 
    [SerializeField]
-	float moveSpeed = 5f;
+	float moveSpeed;
 
 	Rigidbody2D rb;
 	public SpriteRenderer spriteRenderer;

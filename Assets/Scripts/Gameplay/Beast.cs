@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Beast : MonoBehaviour
 {
 
    [SerializeField]
-	float moveSpeed = 5f;
+	float moveSpeed;
 
 	Rigidbody2D rb;
 	public SpriteRenderer spriteRenderer;
@@ -29,6 +30,10 @@ public class Beast : MonoBehaviour
 	public float healthAmount;
 	public float healthDecreaseAmount;
 
+	public float forceAmount;
+	public float recoveryTime;
+	private bool recovery = false;
+
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
 		spriteRenderer = GetComponent<SpriteRenderer>();
@@ -36,7 +41,9 @@ public class Beast : MonoBehaviour
 	
 	void Update () {
 
-		// healthBarImage.fillAmount = healthAmount / maxHealth;
+		if (recovery){
+			return;
+		}
 
 		// Leave this isMoving block like this.
 		// If it matches the bottom isMoving block then Beast won't stop moving.
@@ -62,8 +69,6 @@ public class Beast : MonoBehaviour
 
 						Camera.main.UpdateTarget(transform);
                     }
-                    
-					
 				}
 		}
 
@@ -99,11 +104,36 @@ public class Beast : MonoBehaviour
 	void OnCollisionEnter2D(Collision2D other) {
 		// Debug.Log("Collided with enemy.");
 		if(other.gameObject.tag == "Enemy"){
+			spriteRenderer.color = Color.red;
+			healthAmount -= healthDecreaseAmount;
+			healthBarImage.fillAmount = healthAmount / maxHealth;
+			rb.AddForce((transform.position - other.transform.position) * forceAmount);
+			recovery = true;
+			Invoke("Recover", recoveryTime);
+
+			if(healthAmount <= 0){
+				Debug.Log("Health is 0. Scene should reset.");
+				// TODO: Implement Beast death logic.
+			}
+
+		} else if (other.gameObject.tag == "Targeted"){
+			Destroy(other.gameObject);
+		}
+	}
+
+	void OnTriggerEnter2D(Collider2D other) {
+		if(other.gameObject.tag == "Enemy"){
 			healthAmount -= healthDecreaseAmount;
 			healthBarImage.fillAmount = healthAmount / maxHealth;
 		} else if (other.gameObject.tag == "Targeted"){
 			Destroy(other.gameObject);
 		}
+	}
+
+	void Recover(){
+		recovery = false;
+		rb.velocity = Vector2.zero;
+		spriteRenderer.color = Color.white;
 	}
 
 }

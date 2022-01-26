@@ -72,8 +72,16 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6638320877125199579, guid: 72265390dc0744370834086c69de258a, type: 3}
+      propertyPath: forceAmount
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 6638320877125199579, guid: 72265390dc0744370834086c69de258a, type: 3}
       propertyPath: healthAmount
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6638320877125199579, guid: 72265390dc0744370834086c69de258a, type: 3}
+      propertyPath: recoveryTime
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6638320877125199579, guid: 72265390dc0744370834086c69de258a, type: 3}
       propertyPath: spriteRenderer
