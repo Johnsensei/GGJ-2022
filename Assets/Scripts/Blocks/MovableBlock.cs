@@ -5,6 +5,8 @@ public class MovableBlock : MonoBehaviour
 {
     public float MoveSpeed = 1;
     public LayerMask BlockingMovementLayerMask;
+    public ParticleSystem MovementTrailParticles;
+    public ParticleSystem MirrorMovementTrailParticles;
 
     Vector3? targetPosition;
     Coroutine movementCoroutine;
@@ -111,6 +113,8 @@ public class MovableBlock : MonoBehaviour
 
     IEnumerator MovementCoroutine()
     {
+        ShowParticles();
+
         var movementDirection = targetPosition.Value - transform.position;
         while (movementDirection.sqrMagnitude > 0.01f)
         {
@@ -120,6 +124,19 @@ public class MovableBlock : MonoBehaviour
         }
 
         transform.position = targetPosition.Value;
+        HideParticles();
+    }
+
+    void ShowParticles()
+    {
+        MovementTrailParticles?.Play();
+        MirrorMovementTrailParticles?.Play();
+    }
+
+    void HideParticles()
+    {
+        MovementTrailParticles?.Stop();
+        MirrorMovementTrailParticles?.Stop();
     }
 }
 
