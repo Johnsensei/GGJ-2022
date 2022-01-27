@@ -13,11 +13,11 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Block
+  - Block Interactable
+  - Interactable
+  - Manhole
   - 
   - 
   - 

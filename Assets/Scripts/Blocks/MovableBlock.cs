@@ -4,19 +4,25 @@ using System.Collections;
 public class MovableBlock : MonoBehaviour
 {
     public float MoveSpeed = 1;
+    public LayerMask BlockingMovementLayerMask;
+    public ParticleSystem MovementTrailParticles;
+    public ParticleSystem MirrorMovementTrailParticles;
 
     Vector3? targetPosition;
     Coroutine movementCoroutine;
     Collider2D blockCollider;
 
+    int _playerLayer;
+
     private void Awake()
     {
         blockCollider = GetComponent<Collider2D>();
+        _playerLayer = LayerMask.NameToLayer("Player");
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.layer != _playerLayer)
             return;
 
         var pushDirection = transform.position - collision.gameObject.transform.position;
@@ -96,7 +102,7 @@ public class MovableBlock : MonoBehaviour
     {
         var translationDirection = GetTranslationDirection(direction);
         var raycastOffset = GetRaycastOffset(direction) + translationDirection.normalized / 100;
-        var translationDirectionRaycast = Physics2D.Raycast(transform.position + raycastOffset, translationDirection, .85f);
+        var translationDirectionRaycast = Physics2D.Raycast(transform.position + raycastOffset, translationDirection, .85f, BlockingMovementLayerMask);
         if (translationDirectionRaycast)
         {
             return false;
@@ -107,6 +113,8 @@ public class MovableBlock : MonoBehaviour
 
     IEnumerator MovementCoroutine()
     {
+        ShowParticles();
+
         var movementDirection = targetPosition.Value - transform.position;
         while (movementDirection.sqrMagnitude > 0.01f)
         {
@@ -116,6 +124,19 @@ public class MovableBlock : MonoBehaviour
         }
 
         transform.position = targetPosition.Value;
+        HideParticles();
+    }
+
+    void ShowParticles()
+    {
+        MovementTrailParticles?.Play();
+        MirrorMovementTrailParticles?.Play();
+    }
+
+    void HideParticles()
+    {
+        MovementTrailParticles?.Stop();
+        MirrorMovementTrailParticles?.Stop();
     }
 }
 
