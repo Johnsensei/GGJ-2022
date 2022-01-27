@@ -160,7 +160,7 @@ MonoBehaviour:
   MoveSpeed: 3
   BlockingMovementLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 759
 --- !u!1 &398934015942513850
 GameObject:
   m_ObjectHideFlags: 0
