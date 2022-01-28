@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 398934015711670230}
   - component: {fileID: 3072963772760657815}
   - component: {fileID: 3312045224032098861}
+  - component: {fileID: 4749166952449947600}
   m_Layer: 7
   m_Name: ObstacleRobotSide
   m_TagString: Barrel
@@ -183,9 +184,25 @@ MonoBehaviour:
   MoveSpeed: 3
   BlockingMovementLayerMask:
     serializedVersion: 2
-    m_Bits: 759
+    m_Bits: 15095
   MovementTrailParticles: {fileID: 6118058180750438171}
   MirrorMovementTrailParticles: {fileID: 7182220835878482749}
+--- !u!114 &4749166952449947600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398934015711670218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 183748dd497aa473a98ff0cd8cb67fc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  uniqueID: 5235458912242898207
+  updateError: 0.1
+  checkTime: 0.2
 --- !u!1 &398934015942513850
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,6 +215,7 @@ GameObject:
   - component: {fileID: 398934015942513799}
   - component: {fileID: 398934015942513848}
   - component: {fileID: 398934015942513849}
+  - component: {fileID: 5712650743623191318}
   m_Layer: 7
   m_Name: ObstacleBeastSide
   m_TagString: Untagged
@@ -312,6 +330,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacleParent: {fileID: 398934015711670218}
+--- !u!114 &5712650743623191318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398934015942513850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 183748dd497aa473a98ff0cd8cb67fc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  uniqueID: 5235458912242898207
+  updateError: 0.1
+  checkTime: 0.2
 --- !u!1001 &386255557746678097
 PrefabInstance:
   m_ObjectHideFlags: 0

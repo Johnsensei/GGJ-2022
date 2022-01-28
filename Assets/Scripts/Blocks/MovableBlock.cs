@@ -17,7 +17,7 @@ public class MovableBlock : MonoBehaviour
     private void Awake()
     {
         blockCollider = GetComponent<Collider2D>();
-        _playerLayer = LayerMask.NameToLayer("Player");
+        _playerLayer = LayerMask.NameToLayer("Robot");
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

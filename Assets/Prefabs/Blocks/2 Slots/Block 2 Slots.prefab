@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 445243992280811691}
   - component: {fileID: 445243992280811700}
   - component: {fileID: 3337766315311592677}
+  - component: {fileID: 7514060458971924554}
   m_Layer: 7
   m_Name: ObstacleRobotSide
   m_TagString: Untagged
@@ -128,6 +129,24 @@ MonoBehaviour:
   BlockingMovementLayerMask:
     serializedVersion: 2
     m_Bits: 759
+  MovementTrailParticles: {fileID: 0}
+  MirrorMovementTrailParticles: {fileID: 0}
+--- !u!114 &7514060458971924554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445243992280811688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 183748dd497aa473a98ff0cd8cb67fc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  uniqueID: 2398137554404745225
+  updateError: 0.1
+  checkTime: 0.2
 --- !u!1 &445243992511411160
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,6 +159,7 @@ GameObject:
   - component: {fileID: 445243992511411173}
   - component: {fileID: 445243992511411162}
   - component: {fileID: 445243992511411163}
+  - component: {fileID: 570067028574893306}
   m_Layer: 7
   m_Name: ObstacleBeastSide
   m_TagString: Untagged
@@ -253,6 +273,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacleParent: {fileID: 445243992280811688}
+--- !u!114 &570067028574893306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445243992511411160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 183748dd497aa473a98ff0cd8cb67fc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  uniqueID: 5235458912242898207
+  updateError: 0.1
+  checkTime: 0.2
 --- !u!1 &445243992602572166
 GameObject:
   m_ObjectHideFlags: 0
