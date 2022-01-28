@@ -4611,6 +4611,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6368370679910486262, guid: 03bd96441abd3734c9819833310ce4c6, type: 3}
+      propertyPath: m_LookaheadTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6368370679910486262, guid: 03bd96441abd3734c9819833310ce4c6, type: 3}
       propertyPath: m_UnlimitedSoftZone
       value: 1
       objectReference: {fileID: 0}
