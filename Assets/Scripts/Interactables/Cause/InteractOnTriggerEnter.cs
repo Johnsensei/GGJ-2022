@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class InteractOnTriggerEnter : MonoBehaviour, IInteractable
 {
+    public string InteractableObjectTag;
     public LayerMask InteractableLayers;
     public List<GameObject> Interactables;
 
@@ -14,8 +15,9 @@ public class InteractOnTriggerEnter : MonoBehaviour, IInteractable
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        var matchingTags = string.IsNullOrWhiteSpace(InteractableObjectTag) || collision.CompareTag(InteractableObjectTag);
         var otherLayer = collision.gameObject.layer;
-        if (InteractableLayers.Contains(otherLayer))
+        if (InteractableLayers.Contains(otherLayer) && matchingTags)
             Interact();
     }
 }
