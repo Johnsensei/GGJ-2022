@@ -49,6 +49,7 @@ public class Beast : MonoBehaviour
 		// If it matches the bottom isMoving block then Beast won't stop moving.
         if (isMoving){
             currentDistanceToTouchPos = (touchPosition - transform.position).magnitude;
+			// TODO: battery recharge based on distant as opposed to isMoving.
 			robot.batteryAmount += 1f * Time.deltaTime;
 			robot.batteryBarImage.fillAmount = robot.batteryAmount / robot.maxBattery;
         }
