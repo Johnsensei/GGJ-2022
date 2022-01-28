@@ -265,7 +265,7 @@ MonoBehaviour:
   m_DeadZoneWidth: 2
   m_DeadZoneHeight: 0.15
   m_DeadZoneDepth: 0
-  m_UnlimitedSoftZone: 0
+  m_UnlimitedSoftZone: 1
   m_SoftZoneWidth: 2
   m_SoftZoneHeight: 1
   m_BiasX: 0
