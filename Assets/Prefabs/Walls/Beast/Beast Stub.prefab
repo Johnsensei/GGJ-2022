@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8768134381171759560}
   - component: {fileID: 8768134381171759561}
   - component: {fileID: 8768134381171759562}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Beast Stub
   m_TagString: Untagged
   m_Icon: {fileID: 0}

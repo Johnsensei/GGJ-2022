@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8166441431504362453}
   - component: {fileID: 8166441431504362452}
   - component: {fileID: 8166441431504362455}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Beast Oak
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8663741009061336455}
   - component: {fileID: 69896604075462511}
   - component: {fileID: 8513343075054334661}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Robot Console
   m_TagString: Untagged
   m_Icon: {fileID: 0}

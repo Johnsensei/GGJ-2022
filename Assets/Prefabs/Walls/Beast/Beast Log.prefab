@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7654688402021206818}
   - component: {fileID: 7654688402021206819}
   - component: {fileID: 7654688402021206816}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Beast Log
   m_TagString: Untagged
   m_Icon: {fileID: 0}

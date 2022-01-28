@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3462059461948271103}
   - component: {fileID: 5244490832371626775}
   - component: {fileID: 4473488800223596221}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Robot Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}

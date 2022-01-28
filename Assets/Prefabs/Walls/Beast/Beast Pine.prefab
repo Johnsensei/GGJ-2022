@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5643127416787771661}
   - component: {fileID: 5643127416787771660}
   - component: {fileID: 5643127416787771663}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Beast Pine
   m_TagString: Untagged
   m_Icon: {fileID: 0}

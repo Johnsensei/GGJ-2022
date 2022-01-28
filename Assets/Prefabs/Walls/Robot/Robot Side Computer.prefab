@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6073845816614468717}
   - component: {fileID: 3209160574532675205}
   - component: {fileID: 6508845463527807791}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Robot Side Computer
   m_TagString: Untagged
   m_Icon: {fileID: 0}

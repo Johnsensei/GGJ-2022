@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5067757400687223051}
   - component: {fileID: 5067757400687223050}
   - component: {fileID: 5067757400687223049}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Beast Spruce
   m_TagString: Untagged
   m_Icon: {fileID: 0}
