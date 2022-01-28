@@ -9,6 +9,7 @@ public class AIPatrol : MonoBehaviour
     [SerializeField]
     private bool IsPatrolling;
     private AIDestinationSetter destinationSetter;
+    private AIPath pathfinder;
 
     bool isPatrollingForwards;
     int currentPatrolPoint;
@@ -17,6 +18,7 @@ public class AIPatrol : MonoBehaviour
     private void Awake()
     {
         destinationSetter = GetComponent<AIDestinationSetter>();
+        pathfinder = GetComponent<AIPath>();
     }
 
     void Start()
@@ -28,6 +30,10 @@ public class AIPatrol : MonoBehaviour
             currentPatrolPoint = 0;
             isPatrollingForwards = true;
         }
+
+        if(IsPatrolling)        
+            StartPatrolling();
+        
     }
 
     void Update()
@@ -44,6 +50,7 @@ public class AIPatrol : MonoBehaviour
     public void StartPatrolling()
     {
         IsPatrolling = true;
+        pathfinder.maxSpeed = PatrolSpeed;
     }
 
     public void StopPatrolling()
