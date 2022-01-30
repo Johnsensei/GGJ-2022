@@ -29,10 +29,12 @@ public class Beast : MonoBehaviour
 	public float maxHealth;
 	public float healthAmount;
 	public float healthDecreaseAmount;
+	public float RobotBatteryRefillAmount = 1;
 
 	public float forceAmount;
 	public float recoveryTime;
 	private bool recovery = false;
+
 
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
@@ -86,7 +88,7 @@ public class Beast : MonoBehaviour
 				robot.batteryAmount = 100;
 				robot.batteryBarImage.fillAmount = robot.batteryAmount / robot.maxBattery;
 			} else {
-				robot.batteryAmount += 1f * Time.deltaTime;
+				robot.batteryAmount += RobotBatteryRefillAmount * Time.deltaTime;
 				robot.batteryBarImage.fillAmount = robot.batteryAmount / robot.maxBattery;
 				}
         }
@@ -114,6 +116,7 @@ public class Beast : MonoBehaviour
 
 			if(healthAmount <= 0){
 				Debug.Log("Health is 0. Scene should reset.");
+				SceneLoader.LoadScene(SceneManager.GetActiveScene().buildIndex);
 				// TODO: Implement Beast death logic.
 			}
 
