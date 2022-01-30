@@ -62,6 +62,10 @@ MonoBehaviour:
   RobotMovementVolume: 0.75
   RobotNoBattery: {fileID: 8300000, guid: b0826268c48e89b4bb8cff24e189a21e, type: 3}
   RobotNoBatteryVolume: 0.5
+  BeastAttack: {fileID: 8300000, guid: 722315e6752ba3644a2d61ce61e1aabb, type: 3}
+  BeastAttackVolume: 1
+  BeastGrowl: {fileID: 8300000, guid: 7a91ea27c36bdb8429e3aaf24ebf94b2, type: 3}
+  BeastGrowlVolume: 1
 --- !u!82 &1393915340488271692
 AudioSource:
   m_ObjectHideFlags: 0

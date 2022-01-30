@@ -31,6 +31,14 @@ public class SoundManager : MonoBehaviour
     public AudioClip RobotNoBattery;
     public float RobotNoBatteryVolume = 0.5f;
 
+    [Header("Beast Attack")]
+    public AudioClip BeastAttack;
+    public float BeastAttackVolume = 0.5f;
+
+    [Header("Beast Growl")]
+    public AudioClip BeastGrowl;
+    public float BeastGrowlVolume = 0.5f;
+
     public static SoundManager Singleton;
 
     public void Awake()
@@ -114,6 +122,22 @@ public class SoundManager : MonoBehaviour
         if (Singleton != null)
         {
             PlaySound(Singleton.ButtonSound, Singleton.ButtonSoundVolume);
+        }
+    }
+
+    public static void PlayBeastAttackSound()
+    {
+        if (Singleton != null)
+        {
+            PlaySound(Singleton.BeastAttack, Singleton.BeastAttackVolume);
+        }
+    }
+
+    public static void PlayBeastGrowlSound()
+    {
+        if (Singleton != null)
+        {
+            PlaySound(Singleton.BeastGrowl, Singleton.BeastGrowlVolume);
         }
     }
 }
