@@ -69,7 +69,7 @@ public class Robot : MonoBehaviour
 							whereToMove = (touchPosition - transform.position).normalized;
 							rb.velocity = new Vector2 (whereToMove.x * moveSpeed, whereToMove.y * moveSpeed);
 
-							Camera.main.UpdateTarget(transform);
+							Camera.main.UpdateTarget(transform);							
 					}
 			}
 		}
@@ -83,7 +83,12 @@ public class Robot : MonoBehaviour
         if (isMoving){
             previousDistanceToTouchPos = (touchPosition - transform.position).magnitude;
 			ReduceBattery();
+			SoundManager.PlayRobotMovement();
         }
+		else
+        {
+			SoundManager.StopPlayingRobotSound();
+		}
 
 		Animate();
            
@@ -100,6 +105,7 @@ public class Robot : MonoBehaviour
 			// isMoving = false;
 			batteryAmount = 0;
 			batteryBarImage.fillAmount = batteryAmount / maxBattery;
+			SoundManager.PlayRobotNoBattery();
 		} else {
 			batteryAmount -= batteryDecreaseAmount * Time.deltaTime;
 			batteryBarImage.fillAmount = batteryAmount / maxBattery;

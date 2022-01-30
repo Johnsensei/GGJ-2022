@@ -108,6 +108,8 @@ public class MovableBlock : MonoBehaviour
             StopCoroutine(movementCoroutine);
 
         movementCoroutine = StartCoroutine(MovementCoroutine());
+
+        SoundManager.PlayBoxPush();
     }
 
     Vector3 GetTranslationDirection(MoveDirection direction)

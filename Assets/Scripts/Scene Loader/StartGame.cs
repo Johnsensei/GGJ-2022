@@ -17,6 +17,7 @@ public class StartGame : MonoBehaviour
     void Update()
     {
         if (Input.touchCount > 0) {
+            SoundManager.PlayButtonSound();
             SceneLoader.LoadScene(2);
         }
     }
