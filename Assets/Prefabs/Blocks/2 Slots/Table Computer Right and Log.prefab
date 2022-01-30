@@ -162,7 +162,7 @@ MonoBehaviour:
   MoveSpeed: 3
   BlockingMovementLayerMask:
     serializedVersion: 2
-    m_Bits: 759
+    m_Bits: 31479
   TilesTall: 1
   TilesWide: 2
   MovementTrailParticles: {fileID: 3212340594060241693}
@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  uniqueID: 1126302037793692861
+  uniqueID: 611234695156856230
   updateError: 0.1
   checkTime: 0.2
 --- !u!1 &5497007709660291175
@@ -323,7 +323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  uniqueID: 6094682220600020976
+  uniqueID: 5467297536242306759
   updateError: 0.1
   checkTime: 0.2
 --- !u!1001 &5360577055001395569
