@@ -511,7 +511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a4ce4d158917054990eedb73f99e628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ChaseSpeed: 2
+  ChaseSpeed: 1.5
   chaseTarget: {fileID: 0}
 --- !u!114 &8386668645729221267
 MonoBehaviour:
@@ -525,7 +525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8a59e570e0873241b2f05ef7bc76540, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpotRadius: 2
+  SpotRadius: 1.5
   ChaseTargetsMask:
     serializedVersion: 2
     m_Bits: 4096
