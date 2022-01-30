@@ -127,6 +127,7 @@ public class Beast : MonoBehaviour
 			healthBarImage.fillAmount = healthAmount / maxHealth;
 			rb.AddForce((transform.position - other.transform.position) * forceAmount);
 			recovery = true;
+			SoundManager.PlayBeastGrowlSound();
 			Invoke("Recover", recoveryTime);
 
 			if(healthAmount <= 0){
@@ -136,6 +137,7 @@ public class Beast : MonoBehaviour
 			}
 
 		} else if (other.gameObject.tag == "Targeted"){
+			SoundManager.PlayBeastAttackSound();
 			Destroy(other.gameObject);
 		}
 	}
