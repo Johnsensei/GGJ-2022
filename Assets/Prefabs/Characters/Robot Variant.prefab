@@ -74,6 +74,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 126621513676306469, guid: baca6dedd8e1a46f888744967103fa89, type: 3}
+      propertyPath: moveSpeed
+      value: 3.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 126621513676306469, guid: baca6dedd8e1a46f888744967103fa89, type: 3}
       propertyPath: maxBattery
       value: 100
       objectReference: {fileID: 0}
