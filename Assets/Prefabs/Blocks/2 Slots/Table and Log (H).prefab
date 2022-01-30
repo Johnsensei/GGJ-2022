@@ -272,7 +272,7 @@ MonoBehaviour:
   MoveSpeed: 3
   BlockingMovementLayerMask:
     serializedVersion: 2
-    m_Bits: 759
+    m_Bits: 31479
   TilesTall: 1
   TilesWide: 2
   MovementTrailParticles: {fileID: 3754562027940996593}
