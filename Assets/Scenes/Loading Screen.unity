@@ -130,6 +130,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 367727954, guid: 816b89f38cefd1947be4c78118bc21e8, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8980272466401075446, guid: 816b89f38cefd1947be4c78118bc21e8, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8980272466423926635, guid: 816b89f38cefd1947be4c78118bc21e8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8980272467521478145, guid: 816b89f38cefd1947be4c78118bc21e8, type: 3}
+      propertyPath: m_fontColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8980272467521478145, guid: 816b89f38cefd1947be4c78118bc21e8, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 16777215
+      objectReference: {fileID: 0}
     - target: {fileID: 8980272467712107376, guid: 816b89f38cefd1947be4c78118bc21e8, type: 3}
       propertyPath: m_Name
       value: Scene Loader
