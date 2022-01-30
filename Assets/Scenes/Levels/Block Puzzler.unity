@@ -4944,7 +4944,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8608998175781065634, guid: 6f8686661369d3e4e84167b9602df02e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.25
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 8608998175781065634, guid: 6f8686661369d3e4e84167b9602df02e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5151,8 +5151,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   robot: {fileID: 371528409}
   robotGoal: {fileID: 530691178}
+  robotGoalTeleporter: {fileID: 0}
   beast: {fileID: 1151116520}
   beastGoal: {fileID: 80796166}
+  beastGoalTeleporter: {fileID: 0}
   nextSceneIndex: 3
 --- !u!4 &1861926335
 Transform:
