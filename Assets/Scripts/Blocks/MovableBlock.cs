@@ -3,8 +3,12 @@ using System.Collections;
 
 public class MovableBlock : MonoBehaviour
 {
+    [Header("Functionality")]
     public float MoveSpeed = 1;
     public LayerMask BlockingMovementLayerMask;
+    public int TilesTall = 1;
+    public int TilesWide = 1;
+    [Header("Particles")]
     public ParticleSystem MovementTrailParticles;
     public ParticleSystem MirrorMovementTrailParticles;
 
@@ -25,17 +29,66 @@ public class MovableBlock : MonoBehaviour
         if (collision.gameObject.layer != _playerLayer)
             return;
 
-        var pushDirection = transform.position - collision.gameObject.transform.position;
+        Push(CalculatePushDirection(collision));   
+    }
 
-        //Horizontal Push
-        if(Mathf.Abs(pushDirection.x) >= Mathf.Abs(pushDirection.y))
+    MoveDirection CalculatePushDirection(Collision2D collision)
+    {
+        var contactPoint = collision.contacts[0].point;
+        var blockExtensions = blockCollider.bounds.extents;
+
+        var rightEdge = transform.position + Vector3.right * blockExtensions.x;
+        var leftEdge = transform.position + Vector3.left * blockExtensions.x;
+        var topEdge = transform.position + Vector3.up * blockExtensions.y;
+        var bottomEdge = transform.position + Vector3.down * blockExtensions.y;
+
+        //Right Side
+        if (contactPoint.x > transform.position.x)
         {
-            Push(pushDirection.x > 0 ? MoveDirection.Right : MoveDirection.Left);
+            //Upper Edge
+            if (contactPoint.y > transform.position.y)
+            {
+                //Push to the left side
+                if (Mathf.Abs(contactPoint.x - rightEdge.x) < Mathf.Abs(contactPoint.y - topEdge.y))
+                    return MoveDirection.Left;
+                //Move down
+                else
+                    return MoveDirection.Down;
+            }
+            //Lower Edge
+            else
+            {
+                //Move to the left side
+                if (Mathf.Abs(contactPoint.x - rightEdge.x) < Mathf.Abs(contactPoint.y - bottomEdge.y))                
+                    return MoveDirection.Left;                
+                //Move up
+                else
+                    return MoveDirection.Up;                
+            }
         }
-        //Vertical Push
+        //Left Side
         else
         {
-            Push(pushDirection.y > 0 ? MoveDirection.Up : MoveDirection.Down);
+            //Upper Edge
+            if (contactPoint.y > transform.position.y)
+            {
+                //Push to the right side
+                if (Mathf.Abs(contactPoint.x - leftEdge.x) < Mathf.Abs(contactPoint.y - topEdge.y))                
+                    return MoveDirection.Right;
+                //Move down
+                else
+                    return MoveDirection.Down;                
+            }
+            //Lower Edge
+            else
+            {
+                //Push to the right side
+                if (Mathf.Abs(contactPoint.x - leftEdge.x) < Mathf.Abs(contactPoint.y - bottomEdge.y))                
+                    return MoveDirection.Right;                
+                //Move up
+                else                
+                    return MoveDirection.Up;                
+            }
         }
     }
 
@@ -80,35 +133,58 @@ public class MovableBlock : MonoBehaviour
         return translation;
     }
 
-    Vector3 GetRaycastOffset(MoveDirection direction)
+    Vector3 GetRaycastOffset(MoveDirection direction, int amountOfRaycasts, int raycastIndex)
     {
+        var raycastNumberHorizontalOffset = -blockCollider.bounds.extents.x + (2 * blockCollider.bounds.extents.x / amountOfRaycasts) * raycastIndex + blockCollider.bounds.extents.x / amountOfRaycasts;
+        var raycastNumberVerticalOffset = -blockCollider.bounds.extents.y + (2 * blockCollider.bounds.extents.y / amountOfRaycasts) * raycastIndex + blockCollider.bounds.extents.y / amountOfRaycasts;
+
         switch (direction)
         {
             case MoveDirection.Up:
-                return new Vector3(0, blockCollider.bounds.extents.y, 0);
+                return new Vector3(raycastNumberHorizontalOffset, blockCollider.bounds.extents.y, 0);
             case MoveDirection.Down:
-                return new Vector3(0, -blockCollider.bounds.extents.y, 0);
+                return new Vector3(raycastNumberHorizontalOffset, -blockCollider.bounds.extents.y, 0);
             case MoveDirection.Left:
-                return new Vector3(-blockCollider.bounds.extents.x, 0, 0);
+                return new Vector3(-blockCollider.bounds.extents.x, raycastNumberVerticalOffset, 0);
             case MoveDirection.Right:
-                return new Vector3(blockCollider.bounds.extents.x, 0, 0);
+                return new Vector3(blockCollider.bounds.extents.x, raycastNumberVerticalOffset, 0);
         }
 
         return Vector3.zero;
     }
 
-
     bool CanMove(MoveDirection direction)
     {
-        var translationDirection = GetTranslationDirection(direction);
-        var raycastOffset = GetRaycastOffset(direction) + translationDirection.normalized / 100;
-        var translationDirectionRaycast = Physics2D.Raycast(transform.position + raycastOffset, translationDirection, .85f, BlockingMovementLayerMask);
-        if (translationDirectionRaycast)
+        var numberOfRaycasts = CalculateNumberOfRaycasts(direction);
+
+        for (int i = 0; i < numberOfRaycasts; i++)
         {
-            return false;
-        }
+            var translationDirection = GetTranslationDirection(direction);
+            var raycastOffset = GetRaycastOffset(direction, numberOfRaycasts, i) + translationDirection.normalized / 100;
+            var translationDirectionRaycast = Physics2D.Raycast(transform.position + raycastOffset, translationDirection, .85f, BlockingMovementLayerMask);
+
+            if (translationDirectionRaycast)
+            {
+                return false;
+            }
+        }        
 
         return true;
+    }
+
+    int CalculateNumberOfRaycasts(MoveDirection direction)
+    {
+        switch (direction)
+        {
+            case MoveDirection.Up:
+            case MoveDirection.Down:
+                return TilesWide;
+            case MoveDirection.Left:
+            case MoveDirection.Right:
+                return TilesTall;
+        }
+
+        return 1;
     }
 
     IEnumerator MovementCoroutine()
