@@ -35,6 +35,7 @@ public class Beast : MonoBehaviour
 	public float recoveryTime;
 	private bool recovery = false;
 
+	Coroutine beastStepsCoroutine;
 
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
@@ -80,19 +81,33 @@ public class Beast : MonoBehaviour
 			rb.velocity = Vector2.zero;
 		}
 
-        
-        if (isMoving){
-            previousDistanceToTouchPos = (touchPosition - transform.position).magnitude;
 
-			if (robot.batteryAmount >= 100){
+		if (isMoving)
+		{
+			previousDistanceToTouchPos = (touchPosition - transform.position).magnitude;
+
+			if (robot.batteryAmount >= 100)
+			{
 				robot.batteryAmount = 100;
 				robot.batteryBarImage.fillAmount = robot.batteryAmount / robot.maxBattery;
-			} else {
+			}
+			else
+			{
 				robot.batteryAmount += RobotBatteryRefillAmount * Time.deltaTime;
 				robot.batteryBarImage.fillAmount = robot.batteryAmount / robot.maxBattery;
-				}
-        }
+			}
 
+			if (beastStepsCoroutine == null)
+				beastStepsCoroutine = StartCoroutine(BeastStepsSounds());
+		}
+		else
+		{
+			if (beastStepsCoroutine != null)
+			{
+				StopCoroutine(beastStepsCoroutine);
+				beastStepsCoroutine = null;
+			}
+		}
 		Animate();
     
         
@@ -140,4 +155,14 @@ public class Beast : MonoBehaviour
 		spriteRenderer.color = Color.white;
 	}
 
+	IEnumerator BeastStepsSounds()
+	{
+		while (true)
+		{
+			SoundManager.PlayBeastMove1();
+			yield return new WaitForSeconds(.3f);
+			SoundManager.PlayBeastMove2();
+			yield return new WaitForSeconds(.3f);
+		}
+	}
 }
