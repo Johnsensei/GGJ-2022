@@ -1692,8 +1692,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1194167815}
-  - {fileID: 1810493151}
   - {fileID: 1583785994}
+  - {fileID: 1810493151}
   - {fileID: 559218921}
   m_Father: {fileID: 0}
   m_RootOrder: 12
@@ -4293,8 +4293,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   robot: {fileID: 371528409}
   robotGoal: {fileID: 530691178}
+  robotGoalTeleporter: {fileID: 0}
   beast: {fileID: 1151116520}
   beastGoal: {fileID: 80796166}
+  beastGoalTeleporter: {fileID: 0}
   nextSceneIndex: 3
 --- !u!4 &1861926335
 Transform:
@@ -7335,6 +7337,14 @@ PrefabInstance:
       propertyPath: sceneController
       value: 
       objectReference: {fileID: 1861926334}
+    - target: {fileID: 7205991479943199842, guid: fafb4321202104871bab667402f99a8b, type: 3}
+      propertyPath: beast
+      value: 
+      objectReference: {fileID: 1151116520}
+    - target: {fileID: 7205991479943199842, guid: fafb4321202104871bab667402f99a8b, type: 3}
+      propertyPath: robot
+      value: 
+      objectReference: {fileID: 371528409}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fafb4321202104871bab667402f99a8b, type: 3}
 --- !u!1001 &6368370680149259610
