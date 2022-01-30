@@ -1,16 +1,16 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
     
     public Robot robot;
     public Goal robotGoal;
+    public GameObject robotGoalTeleporter;
     public Beast beast;
     public Goal beastGoal;
-    
+    public GameObject beastGoalTeleporter;
+
     public int nextSceneIndex;
 
     public void CheckGoals(){
@@ -44,8 +44,8 @@ public class SceneController : MonoBehaviour
 
     IEnumerator TeleportEffect(){
         yield return new WaitForSeconds(0.5f);
-        robot.goalTeleportEffect.Play();
-        beast.goalTeleportEffect.Play();
+        robotGoalTeleporter.SetActive(true);
+        beastGoalTeleporter.SetActive(true);
     }
 
     IEnumerator NextScene(){
