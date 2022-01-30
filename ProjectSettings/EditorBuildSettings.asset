@@ -12,9 +12,18 @@ EditorBuildSettings:
     path: Assets/Scenes/Loading Screen.unity
     guid: de3d719cb33cc524ab5af19cf24b087c
   - enabled: 1
-    path: Assets/Scenes/Level1 1.unity
-    guid: 230aae7226b114079a7726fcc9b2abe0
+    path: Assets/Scenes/Levels/1 -Robot Tutorial.unity
+    guid: a8330223adca3fb4b9b4c76a2d856074
   - enabled: 1
-    path: Assets/Scenes/Level2.unity
-    guid: 486f576f710bc479188653e692915831
+    path: Assets/Scenes/Levels/2 - Beast Tutorial.unity
+    guid: a78540e9f7ace00419bff320846a73e9
+  - enabled: 1
+    path: Assets/Scenes/Levels/3 - Mixed Mechanics.unity
+    guid: 3058766a82b7b964995a22e770d59362
+  - enabled: 1
+    path: Assets/Scenes/Levels/4 - Companion Block.unity
+    guid: b2aacfc52c8ef0a429adf07d0b3a393c
+  - enabled: 1
+    path: Assets/Scenes/Levels/5 - Block Puzzler.unity
+    guid: 2a51d91eab3080141a666252abccd846
   m_configObjects: {}
