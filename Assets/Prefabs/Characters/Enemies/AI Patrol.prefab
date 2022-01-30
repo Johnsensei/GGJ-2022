@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 4684634912501565382}
   - component: {fileID: 5360310394579846141}
   - component: {fileID: 201109638444939534}
+  - component: {fileID: 5525992478580861348}
   m_Layer: 14
   m_Name: Patrol Enemy - Robot Side
   m_TagString: Enemy
@@ -168,6 +169,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mirroredGameObject: {fileID: 8608998174368234135}
+--- !u!95 &5525992478580861348
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4263728426578769642}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f3029f5622c643f44a1f76ea87f49388, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5413320368067996350
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,6 +271,8 @@ GameObject:
   - component: {fileID: 8608998174368234128}
   - component: {fileID: 8608998174368234129}
   - component: {fileID: 8608998174368234142}
+  - component: {fileID: 3758160601718933899}
+  - component: {fileID: 1321485839211845525}
   m_Layer: 14
   m_Name: Patrol Enemy
   m_TagString: Enemy
@@ -474,6 +497,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d03dc400785604aefa1f357ab0502eca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &3758160601718933899
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8608998174368234135}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f3029f5622c643f44a1f76ea87f49388, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1321485839211845525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8608998174368234135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da975dec09aca844cb94dc6e07875f55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 3758160601718933899}
+  otherAnimator: {fileID: 5525992478580861348}
 --- !u!1 &8608998175781065635
 GameObject:
   m_ObjectHideFlags: 0

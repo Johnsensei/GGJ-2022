@@ -18,6 +18,8 @@ GameObject:
   - component: {fileID: 5471196797529994200}
   - component: {fileID: 4006437144816111321}
   - component: {fileID: 628398592862809740}
+  - component: {fileID: 1511785546237590866}
+  - component: {fileID: 825614109385928708}
   m_Layer: 14
   m_Name: Chase Enemy - Beast Side
   m_TagString: Enemy
@@ -81,7 +83,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 737aaddf8b340417d9d0693b553b82a1, type: 3}
+  m_Sprite: {fileID: 821502165, guid: e8a483319347e674cbd69b516da01383, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -256,6 +258,40 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4096
   DebugMode: 1
+--- !u!95 &1511785546237590866
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5612178383097172900}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f3029f5622c643f44a1f76ea87f49388, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &825614109385928708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5612178383097172900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da975dec09aca844cb94dc6e07875f55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1511785546237590866}
+  otherAnimator: {fileID: 5423348945440159797}
 --- !u!1 &8608998174368234135
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,6 +305,7 @@ GameObject:
   - component: {fileID: 1121219189598157588}
   - component: {fileID: 8608998174368234141}
   - component: {fileID: 8724616023344130210}
+  - component: {fileID: 5423348945440159797}
   m_Layer: 14
   m_Name: Chase Enemy - Robot Side
   m_TagString: Enemy
@@ -393,6 +430,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mirroredGameObject: {fileID: 5612178383097172900}
+--- !u!95 &5423348945440159797
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8608998174368234135}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f3029f5622c643f44a1f76ea87f49388, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8608998175781065635
 GameObject:
   m_ObjectHideFlags: 0
