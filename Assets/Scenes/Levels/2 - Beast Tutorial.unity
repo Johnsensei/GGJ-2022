@@ -3836,6 +3836,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2484040662181369746, guid: 6858defc97a594657b884ac41899b576, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2484040662181369746, guid: 6858defc97a594657b884ac41899b576, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -75
+      objectReference: {fileID: 0}
     - target: {fileID: 8337936439901175752, guid: 6858defc97a594657b884ac41899b576, type: 3}
       propertyPath: m_Name
       value: LevelCanvas
@@ -3928,6 +3936,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8650733914277348093, guid: 6858defc97a594657b884ac41899b576, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dcc8130f0e07e7b439bdad3b98799b28, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6858defc97a594657b884ac41899b576, type: 3}
 --- !u!114 &1897657594 stripped
