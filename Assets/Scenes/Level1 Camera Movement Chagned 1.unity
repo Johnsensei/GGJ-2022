@@ -501,7 +501,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 595758529}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.1171813, y: -7.7444696, z: -10}
+  m_LocalPosition: {x: -0.11717248, y: -7.74388, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4627,6 +4627,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1787696816, guid: 6858defc97a594657b884ac41899b576, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787696816, guid: 6858defc97a594657b884ac41899b576, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787696816, guid: 6858defc97a594657b884ac41899b576, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 308
+      objectReference: {fileID: 0}
     - target: {fileID: 8337936439901175752, guid: 6858defc97a594657b884ac41899b576, type: 3}
       propertyPath: m_Name
       value: LevelCanvas
