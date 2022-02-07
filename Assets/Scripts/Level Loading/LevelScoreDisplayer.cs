@@ -21,10 +21,9 @@ public class LevelScoreDisplayer : MonoBehaviour
         var filledDisplayers = Mathf.FloorToInt(scoreToShow);
         var lastDisplayerValue = scoreToShow - filledDisplayers;
 
-        var displayerIndex = filledDisplayers;
-        while(displayerIndex > 0)
+        for(int i = 0; i < filledDisplayers; i++)
         {
-            ScoreDisplayers[ScoreDisplayers.Count - displayerIndex--].fillAmount = 1;
+            ScoreDisplayers[i].fillAmount = 1;
         }
 
         if(filledDisplayers < ScoreDisplayers.Count)
