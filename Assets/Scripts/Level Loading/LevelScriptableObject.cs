@@ -7,5 +7,6 @@ public class LevelScriptableObject : ScriptableObject
     public int BuildIndex;
     public Sprite Image;
     public string Name;
-    public float Stars;
+    public float Score;
+    public static float MaxScore { get { return 3; } }
 }
