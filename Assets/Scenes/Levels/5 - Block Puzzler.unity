@@ -7359,7 +7359,7 @@ PrefabInstance:
       objectReference: {fileID: 371528409}
     - target: {fileID: 7205991479943199842, guid: fafb4321202104871bab667402f99a8b, type: 3}
       propertyPath: nextSceneIndex
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fafb4321202104871bab667402f99a8b, type: 3}
