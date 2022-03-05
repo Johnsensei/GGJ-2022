@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/5 - Block Puzzler.unity
     guid: 2a51d91eab3080141a666252abccd846
+  - enabled: 1
+    path: Assets/Scenes/Levels/6 - Congestion.unity
+    guid: 5ce8cc797bc405647bf28a7b3d3b326f
   m_configObjects: {}
