@@ -36,7 +36,7 @@ public class Targeted : MonoBehaviour
     void OnMouseUpAsButton(){
             // Debug.Log("Enemy touched.");
             gameObject.tag = "Targeted";
-            // gameObject.transform.GetChild(0).gameObject.SetActive(true);
+            gameObject.transform.GetChild(0).gameObject.SetActive(true);
         }
 
 }
