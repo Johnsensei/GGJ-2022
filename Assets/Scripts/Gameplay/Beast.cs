@@ -29,7 +29,8 @@ public class Beast : MonoBehaviour
 	public float maxHealth;
 	public float healthAmount;
 	public float healthDecreaseAmount;
-	public float RobotBatteryRefillAmount = 1;
+	public float RobotBatteryRefillAmount;
+	public float robotBatteryRestoreAmount;
 
 	public float forceAmount;
 	public float recoveryTime;
@@ -139,6 +140,9 @@ public class Beast : MonoBehaviour
 		} else if (other.gameObject.tag == "Targeted"){
 			SoundManager.PlayBeastAttackSound();
 			Destroy(other.gameObject);
+			// Restore battery to Robot.
+			robot.batteryAmount += robotBatteryRestoreAmount;
+			robot.batteryBarImage.fillAmount = robot.batteryAmount / robot.maxBattery;
 		}
 	}
 

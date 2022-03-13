@@ -17,19 +17,6 @@ public class Targeted : MonoBehaviour
     void Update()
     {
 
-        
-
-        // if (Input.touchCount > 0) {
-		// 	touch = Input.GetTouch (0);
-
-		// 	if (touch.phase == TouchPhase.Ended) {
-		// 			touchPosition = Camera.main.ScreenToWorldPoint (touch.position);
-                    
-        //             if(touchPosition == transform.position){
-        //                 gameObject.tag = "Targeted";
-        //             }
-		// 	}
-		// }
 
     } // End of Update.
 

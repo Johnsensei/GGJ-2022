@@ -107,6 +107,10 @@ PrefabInstance:
       propertyPath: healthDecreaseAmount
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 6638320877125199579, guid: 72265390dc0744370834086c69de258a, type: 3}
+      propertyPath: robotBatteryRestoreAmount
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6638320877125199576, guid: 72265390dc0744370834086c69de258a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 72265390dc0744370834086c69de258a, type: 3}
