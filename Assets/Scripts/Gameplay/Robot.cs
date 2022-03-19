@@ -29,6 +29,7 @@ public class Robot : MonoBehaviour
 	public float batteryDecreaseAmount;
 
 	private bool recovery = false;
+	private bool healing = false;
 
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
@@ -39,6 +40,11 @@ public class Robot : MonoBehaviour
 
 		if(recovery){
 			return;
+		}
+
+		if(healing){
+			ReduceBattery();
+			HealBeast();
 		}
 
 		if(batteryAmount <= 0){
@@ -56,6 +62,10 @@ public class Robot : MonoBehaviour
     
 		if (Input.touchCount > 0) {
 			touch = Input.GetTouch (0);
+
+			// if (touch.phase == TouchPhase.Stationary && touch.position == transform.position){
+			// 	Debug.Log("Robot is being held.");
+			// }
 
 			if (touch.phase == TouchPhase.Began) {
 					previousDistanceToTouchPos = 0;
@@ -115,6 +125,15 @@ public class Robot : MonoBehaviour
 		}
 	}
 
+	void HealBeast(){
+		if(beast.healthAmount >= beast.maxHealth){
+			healing = false;
+		}
+		
+		beast.healthAmount += batteryDecreaseAmount * Time.deltaTime;
+		beast.healthBarImage.fillAmount = beast.healthAmount / beast.maxHealth;
+	}
+
 	void OnCollisionEnter2D(Collision2D other) {
 		// Debug.Log("Collided with enemy.");
 		if(other.gameObject.tag == "Enemy"){
@@ -132,6 +151,14 @@ public class Robot : MonoBehaviour
 		recovery = false;
 		rb.velocity = Vector2.zero;
 		spriteRenderer.color = Color.white;
+	}
+
+	void OnMouseDown(){
+            healing = true;
+        }
+	
+	void OnMouseUpAsButton(){
+		healing = false;
 	}
 
 }
