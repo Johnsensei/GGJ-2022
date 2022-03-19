@@ -28,15 +28,18 @@ public class Robot : MonoBehaviour
 	public float batteryAmount;
 	public float batteryDecreaseAmount;
 
+	private bool recovery = false;
 
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
 		spriteRenderer = GetComponent<SpriteRenderer>();
-		// Test code that I have the battery bar image.
-		// batteryBarImage.fillAmount = 0.3f;
 	}
 	
 	void Update () {
+
+		if(recovery){
+			return;
+		}
 
 		if(batteryAmount <= 0){
 			isMoving = false;
@@ -110,6 +113,25 @@ public class Robot : MonoBehaviour
 			batteryAmount -= batteryDecreaseAmount * Time.deltaTime;
 			batteryBarImage.fillAmount = batteryAmount / maxBattery;
 		}
+	}
+
+	void OnCollisionEnter2D(Collision2D other) {
+		// Debug.Log("Collided with enemy.");
+		if(other.gameObject.tag == "Enemy"){
+			spriteRenderer.color = Color.black;
+			batteryAmount -= batteryDecreaseAmount;
+			batteryBarImage.fillAmount = batteryAmount / maxBattery;
+			rb.AddForce((transform.position - other.transform.position) * beast.forceAmount);
+			recovery = true;
+			// SoundManager.PlayBeastGrowlSound();  // Play a sound if there is one for robot.
+			Invoke("Recover", 0.1f);
+		}
+	}
+
+	void Recover(){
+		recovery = false;
+		rb.velocity = Vector2.zero;
+		spriteRenderer.color = Color.white;
 	}
 
 }

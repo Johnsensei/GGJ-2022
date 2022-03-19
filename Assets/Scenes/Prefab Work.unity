@@ -452,6 +452,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9068518207958849238, guid: 2f93bb11975b24100a8e7933d165fb6b, type: 3}
+      propertyPath: beast
+      value: 
+      objectReference: {fileID: 1151116520}
+    - target: {fileID: 9068518207958849238, guid: 2f93bb11975b24100a8e7933d165fb6b, type: 3}
       propertyPath: batteryBarImage
       value: 
       objectReference: {fileID: 1488942660}

@@ -457,6 +457,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9068518207958849238, guid: 2f93bb11975b24100a8e7933d165fb6b, type: 3}
+      propertyPath: beast
+      value: 
+      objectReference: {fileID: 1151116520}
+    - target: {fileID: 9068518207958849238, guid: 2f93bb11975b24100a8e7933d165fb6b, type: 3}
       propertyPath: batteryBarImage
       value: 
       objectReference: {fileID: 1488942660}
@@ -4283,11 +4287,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 695439761343705122, guid: 7d899fd9aaff9f541a7442c8db5f819b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.11718774
+      value: -0.1171813
       objectReference: {fileID: 0}
     - target: {fileID: 695439761343705122, guid: 7d899fd9aaff9f541a7442c8db5f819b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.68709
+      value: -7.7444696
       objectReference: {fileID: 0}
     - target: {fileID: 695439761343705122, guid: 7d899fd9aaff9f541a7442c8db5f819b, type: 3}
       propertyPath: m_LocalPosition.z
