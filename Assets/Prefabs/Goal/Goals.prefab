@@ -329,6 +329,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5690665419518464860}
     m_Modifications:
+    - target: {fileID: 5743497431178991675, guid: afcc7b816e616124684d55f1bae457d7, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -950780964, guid: cbd96ca2dbfb247e9a2447c0108f69a9, type: 3}
     - target: {fileID: 5743497431288251501, guid: afcc7b816e616124684d55f1bae457d7, type: 3}
       propertyPath: m_Name
       value: Beast Teleporter
@@ -381,7 +385,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5743497431178991674, guid: afcc7b816e616124684d55f1bae457d7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: afcc7b816e616124684d55f1bae457d7, type: 3}
 --- !u!4 &3004992592904408723 stripped
 Transform:
