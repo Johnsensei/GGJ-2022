@@ -827,6 +827,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5244490832371626775, guid: a7a218ac0a37af64a8ca101e12920f17, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7779679919040775574, guid: a7a218ac0a37af64a8ca101e12920f17, type: 3}
       propertyPath: m_Name
       value: Robot Cylinder (4)

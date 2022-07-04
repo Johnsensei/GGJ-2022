@@ -1367,6 +1367,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5244490832371626775, guid: a7a218ac0a37af64a8ca101e12920f17, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7779679919040775574, guid: a7a218ac0a37af64a8ca101e12920f17, type: 3}
       propertyPath: m_Name
       value: Robot Cylinder (3)
@@ -1999,6 +2003,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 894714571}
     m_Modifications:
+    - target: {fileID: 8166441431504362452, guid: 65d6c16c86662f342858f13f594c3c38, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8166441431504362453, guid: 65d6c16c86662f342858f13f594c3c38, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -3893,6 +3901,10 @@ PrefabInstance:
     - target: {fileID: 3462059461948271103, guid: a7a218ac0a37af64a8ca101e12920f17, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5244490832371626775, guid: a7a218ac0a37af64a8ca101e12920f17, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7779679919040775574, guid: a7a218ac0a37af64a8ca101e12920f17, type: 3}
       propertyPath: m_Name
